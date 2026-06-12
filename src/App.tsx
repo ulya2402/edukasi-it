@@ -112,39 +112,39 @@ const injectStyles = () => {
 const SECTIONS = [
   { id: 'home', title: 'Pendahuluan', icon: Book },
   { id: 'pengertian', title: 'Konsep Algoritma', icon: Brain },
-  { id: 'alasan', title: 'Alasan Logis', icon: MapPin },
+  { id: 'alasan', title: 'Manfaat & Tujuan', icon: MapPin },
   { id: 'program', title: 'Sistem & Bahasa', icon: Code },
-  { id: 'penyelesaian', title: 'Pola Pikir', icon: Layers },
-  { id: 'ekspresi', title: 'Cara Penulisan', icon: FileText },
-  { id: 'pedoman', title: 'Pedoman Standar', icon: CheckCircle },
+  { id: 'penyelesaian', title: 'Tahapan Pengembangan', icon: Layers },
+  { id: 'ekspresi', title: 'Notasi Algoritma', icon: FileText },
+  { id: 'pedoman', title: 'Kriteria Algoritma', icon: CheckCircle },
   { id: 'struktur', title: 'Struktur Dasar', icon: List },
-  { id: 'glosarium', title: 'Kamus Istilah', icon: Search },
+  { id: 'glosarium', title: 'Glosarium', icon: Search },
 ];
 
 const GLOSSARY = [
-  { term: "CPU (Central Processing Unit)", desc: "Bagian utama komputer yang berfungsi sebagai 'otak'. Tugasnya menerima, menerjemahkan, dan menjalankan semua instruksi dari program." },
-  { term: "Kecerdasan Buatan (AI)", desc: "Sistem komputer yang dilatih agar memiliki kemampuan layaknya manusia: mengenali pola, belajar dari pengalaman, dan mengambil keputusan sendiri." },
-  { term: "Mnemonik", desc: "Sebuah teknik 'jembatan keledai'. Cara kreatif untuk membantu otak kita mengingat informasi kompleks dengan lebih mudah." },
-  { term: "Pseudocode", desc: "Cara menuliskan langkah-langkah program menggunakan bahasa yang mirip bahasa manusia, agar mudah dibaca sebelum diubah menjadi kode bahasa pemrograman asli." },
-  { term: "Flowchart", desc: "Bagan alir. Gambaran visual menggunakan bentuk-bentuk geometris (kotak, oval, belah ketupat) untuk menjelaskan urutan langkah sebuah sistem." }
+  { term: "CPU (Central Processing Unit)", desc: "Komponen utama komputer yang berfungsi sebagai unit pemrosesan pusat. Bertugas menerima, menerjemahkan, dan mengeksekusi seluruh instruksi dari sebuah program." },
+  { term: "Kecerdasan Buatan (Artificial Intelligence)", desc: "Cabang ilmu komputer yang memungkinkan sistem untuk mengenali pola, belajar dari data, dan mengambil keputusan secara mandiri menyerupai kemampuan kognitif manusia." },
+  { term: "Mnemonik", desc: "Teknik bantu ingat yang dirancang untuk membantu seseorang menyimpan dan mengingat informasi kompleks dengan cara yang lebih sederhana dan terstruktur." },
+  { term: "Pseudocode", desc: "Notasi penulisan algoritma menggunakan struktur bahasa yang mendekati bahasa manusia, bertujuan memudahkan perancangan logika sebelum diimplementasikan ke dalam bahasa pemrograman." },
+  { term: "Flowchart (Diagram Alir)", desc: "Representasi visual dari sebuah algoritma yang menggunakan simbol-simbol standar (kotak, oval, belah ketupat) untuk menggambarkan urutan proses secara sistematis." }
 ];
 
 type QuizQuestion = { q: string, options: string[], a: number };
 
 const QUIZ_DATA: Record<string, QuizQuestion[]> = {
   tf1: [
-    { q: "Suatu upaya dengan urutan operasi yang disusun secara logis dan sistematis untuk menyelesaikan masalah adalah...", options: ["Logika pemrograman", "Algoritma", "Program komputer", "Logika informatika"], a: 1 },
-    { q: "Algoritma adalah suatu metode khusus untuk menyelesaikan suatu masalah, ini adalah definisi menurut...", options: ["Abu Ja'far Al-Khawarizmi", "Donald E. Knuth", "David Bolton", "Andrey Markov"], a: 0 },
-    { q: "Jika pengembang tidak mempertimbangkan ruang memori yang terkuras, ia mengabaikan prinsip...", options: ["Abstraksi", "Efisiensi", "Reusability", "Semua benar"], a: 1 },
-    { q: "Bahasa pemrograman tingkat tinggi dibuat agar...", options: ["Langsung dimengerti mesin", "Sulit diretas", "Menyerupai bahasa manusia", "Hanya menggunakan angka 0 dan 1"], a: 2 },
-    { q: "Programmer pertama di dunia yang menyusun rencana mesin analitikal adalah...", options: ["Alan Turing", "Charles Babbage", "Ada Lovelace", "Donald E. Knuth"], a: 2 },
+    { q: "Suatu urutan operasi yang disusun secara logis dan sistematis untuk menyelesaikan suatu masalah disebut...", options: ["Logika pemrograman", "Algoritma", "Program komputer", "Logika informatika"], a: 1 },
+    { q: "\"Algoritma adalah suatu metode khusus untuk menyelesaikan suatu permasalahan\" merupakan definisi yang dikemukakan oleh...", options: ["Abu Ja'far Al-Khawarizmi", "Donald E. Knuth", "David Bolton", "Andrey Markov"], a: 0 },
+    { q: "Apabila sebuah algoritma tidak memperhatikan penggunaan ruang memori secara optimal, maka algoritma tersebut mengabaikan prinsip...", options: ["Abstraksi", "Efisiensi", "Reusability", "Semua benar"], a: 1 },
+    { q: "Bahasa pemrograman tingkat tinggi dirancang agar...", options: ["Dapat langsung dieksekusi oleh mesin", "Lebih sulit untuk diretas", "Mendekati struktur bahasa manusia", "Hanya terdiri dari kombinasi angka 0 dan 1"], a: 2 },
+    { q: "Tokoh yang dikenal sebagai penyusun program komputer pertama di dunia melalui rancangan mesin analitikal adalah...", options: ["Alan Turing", "Charles Babbage", "Ada Lovelace", "Donald E. Knuth"], a: 2 },
   ],
   tf2: [
-    { q: "Struktur dasar yang menyelesaikan instruksi baris demi baris tanpa ada yang diloncati disebut...", options: ["Perulangan", "Skuensial", "Seleksi", "Variabel"], a: 1 },
-    { q: "Sebuah algoritma yang memiliki kondisi 'Jika Benar lakukan A, Jika Salah lakukan B' menggunakan struktur...", options: ["Seleksi", "Skuensial", "Perulangan", "Abstraksi"], a: 0 },
-    { q: "Cara paling efektif untuk mencetak angka 1 sampai 1.000 di layar komputer adalah menggunakan struktur...", options: ["Skuensial", "Seleksi", "Seleksi dan Skuensial", "Perulangan"], a: 3 },
-    { q: "Jika C = 5, kemudian ada instruksi perulangan C = C + 1 sebanyak 5 kali. Berapakah nilai akhir C?", options: ["9", "10", "11", "12"], a: 1 },
-    { q: "Struktur yang mencegah programmer menulis ribuan baris kode yang sama secara manual adalah...", options: ["Skuensial", "Abstraksi", "Perulangan", "Seleksi"], a: 2 },
+    { q: "Struktur dasar yang mengeksekusi instruksi secara berurutan dari awal hingga akhir tanpa ada yang terlewat disebut...", options: ["Perulangan", "Sekuensial", "Seleksi", "Variabel"], a: 1 },
+    { q: "Sebuah algoritma yang menerapkan logika \"Jika kondisi benar, lakukan A; jika salah, lakukan B\" menggunakan struktur...", options: ["Seleksi", "Sekuensial", "Perulangan", "Abstraksi"], a: 0 },
+    { q: "Cara paling efisien untuk menampilkan angka 1 hingga 1.000 pada layar komputer adalah dengan menggunakan struktur...", options: ["Sekuensial", "Seleksi", "Seleksi dan Sekuensial", "Perulangan"], a: 3 },
+    { q: "Jika C = 5, kemudian dijalankan instruksi perulangan C = C + 1 sebanyak 5 kali, maka nilai akhir C adalah...", options: ["9", "10", "11", "12"], a: 1 },
+    { q: "Struktur yang memungkinkan programmer menghindari penulisan ribuan baris kode yang berulang secara manual adalah...", options: ["Sekuensial", "Abstraksi", "Perulangan", "Seleksi"], a: 2 },
   ]
 };
 
@@ -167,17 +167,17 @@ const HomeSection = ({ onNavigate }: { onNavigate: (id: string) => void }) => (
   <div className="flex flex-col justify-center min-h-[75vh] max-w-4xl pt-10">
     <div className="animate-in mb-6">
       <span className="px-4 py-2 rounded-full bg-black text-white text-xs font-semibold tracking-widest uppercase">
-        Modul 1 • Pengantar
+        Modul 1 • Pengantar Algoritma
       </span>
     </div>
     
     <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-black mb-8 animate-in delay-1 leading-tight">
-      Seni Berpikir <br />
-      Sistematis.
+      Dasar-Dasar <br />
+      Algoritma & Logika.
     </h1>
     
     <p className="text-xl text-[#71717A] mb-14 animate-in delay-2 max-w-2xl leading-relaxed">
-      Memahami pola pikir fundamental di balik semua teknologi modern. Sebuah panduan ramah awam untuk memahami bagaimana komputer memecahkan masalah.
+      Modul pembelajaran interaktif yang dirancang untuk membantu Anda memahami konsep fundamental di balik cara kerja komputer—mulai dari pengertian algoritma, struktur logika dasar, hingga penerapannya dalam kehidupan sehari-hari.
     </p>
 
     <div className="animate-in delay-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
@@ -190,8 +190,8 @@ const HomeSection = ({ onNavigate }: { onNavigate: (id: string) => void }) => (
             <Brain size={24} />
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-black">Mulai Membaca</h3>
-            <p className="text-sm text-[#71717A]">Pahami Konsep Dasar</p>
+            <h3 className="font-semibold text-lg text-black">Mulai Pembelajaran</h3>
+            <p className="text-sm text-[#71717A]">Pahami konsep dasar algoritma</p>
           </div>
         </div>
         <ArrowRight className="text-[#A1A1AA] group-hover:text-black transition-colors" />
@@ -206,8 +206,8 @@ const HomeSection = ({ onNavigate }: { onNavigate: (id: string) => void }) => (
             <Search size={24} />
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-black">Cari Istilah</h3>
-            <p className="text-sm text-[#71717A]">Kamus Kata Sulit</p>
+            <h3 className="font-semibold text-lg text-black">Glosarium</h3>
+            <p className="text-sm text-[#71717A]">Kamus istilah teknis singkat</p>
           </div>
         </div>
         <ArrowRight className="text-[#A1A1AA] group-hover:text-black transition-colors" />
@@ -220,49 +220,49 @@ const PengertianSection = () => (
   <div className="space-y-12">
     <SectionTitle 
       title="Konsep Algoritma" 
-      subtitle="Pada dasarnya, algoritma hanyalah urutan langkah-langkah logis untuk menyelesaikan masalah tertentu. Tidak lebih dari sebuah 'resep'."
+      subtitle="Secara mendasar, algoritma adalah rangkaian langkah logis dan sistematis yang disusun untuk menyelesaikan suatu permasalahan—dapat diibaratkan sebagai sebuah prosedur atau resep penyelesaian."
     />
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h3 className="font-bold text-lg mb-2 text-black">Abu Ja'far Al-Khawarizmi</h3>
-        <p className="text-[#71717A] text-sm leading-relaxed">"Sebuah metode khusus untuk menyelesaikan suatu permasalahan."</p>
+        <p className="text-[#71717A] text-sm leading-relaxed">"Algoritma merupakan suatu metode khusus yang digunakan untuk menyelesaikan suatu permasalahan tertentu."</p>
       </Card>
       <Card delay="delay-1">
         <h3 className="font-bold text-lg mb-2 text-black">Andrey A. Markov</h3>
-        <p className="text-[#71717A] text-sm leading-relaxed">"Keputusan tepat untuk merumuskan proses yang mengarahkan data awal menjadi hasil akhir."</p>
+        <p className="text-[#71717A] text-sm leading-relaxed">"Algoritma adalah rumusan proses yang menentukan secara tepat bagaimana data awal diolah menjadi hasil akhir."</p>
       </Card>
     </div>
 
     <div className="glass-card p-8 md:p-12 mt-12 animate-in delay-2">
-      <h3 className="text-xl font-bold mb-6 text-black border-b border-black/10 pb-4">Analogi Nyata: Menuju Bogor</h3>
+      <h3 className="text-xl font-bold mb-6 text-black border-b border-black/10 pb-4">Ilustrasi: Menentukan Rute Perjalanan ke Bogor</h3>
       <p className="text-[#71717A] mb-8">
-        Untuk mencapai satu tujuan, ada banyak jalur (algoritma) yang bisa dipilih. Masing-masing memiliki efisiensi waktu dan biaya yang berbeda.
+        Untuk mencapai satu tujuan yang sama, terdapat berbagai alur (algoritma) yang dapat dipilih. Setiap alur memiliki tingkat efisiensi waktu dan biaya yang berbeda-beda.
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-6 rounded-2xl bg-black/5">
-          <h4 className="font-bold text-black mb-4 flex items-center gap-2">1. Naik Kereta</h4>
+          <h4 className="font-bold text-black mb-4 flex items-center gap-2">1. Kereta Api</h4>
           <ul className="space-y-2 text-sm text-[#71717A]">
-            <li>• Berangkat ke stasiun</li>
-            <li>• Beli tiket & masuk</li>
-            <li>• Waktu pasti, biaya pas</li>
+            <li>• Menuju stasiun keberangkatan</li>
+            <li>• Membeli tiket dan memasuki peron</li>
+            <li>• Estimasi waktu pasti, biaya terjangkau</li>
           </ul>
         </div>
         <div className="p-6 rounded-2xl bg-black/5 border border-black/10">
-          <h4 className="font-bold text-black mb-4 flex items-center gap-2">2. Naik Taksi</h4>
+          <h4 className="font-bold text-black mb-4 flex items-center gap-2">2. Taksi/Ride-Hailing</h4>
           <ul className="space-y-2 text-sm text-[#71717A]">
-            <li>• Pesan lewat aplikasi</li>
-            <li>• Lewat jalan tol</li>
-            <li>• Tercepat, namun mahal</li>
+            <li>• Memesan melalui aplikasi</li>
+            <li>• Melalui jalur tol</li>
+            <li>• Waktu tempuh tercepat, biaya lebih tinggi</li>
           </ul>
         </div>
         <div className="p-6 rounded-2xl bg-black/5">
-          <h4 className="font-bold text-black mb-4 flex items-center gap-2">3. Naik Angkot</h4>
+          <h4 className="font-bold text-black mb-4 flex items-center gap-2">3. Angkutan Umum</h4>
           <ul className="space-y-2 text-sm text-[#71717A]">
-            <li>• Tunggu di pangkalan</li>
-            <li>• Ngetem sampai penuh</li>
-            <li>• Paling murah, tapi lama</li>
+            <li>• Menunggu di terminal/pangkalan</li>
+            <li>• Menunggu hingga kendaraan terisi penumpang</li>
+            <li>• Biaya paling rendah, waktu tempuh lebih lama</li>
           </ul>
         </div>
       </div>
@@ -273,17 +273,17 @@ const PengertianSection = () => (
 const AlasanSection = () => (
   <div className="space-y-12">
     <SectionTitle 
-      title="Mengapa Harus Ada Algoritma?" 
-      subtitle="Perusahaan besar bersedia membayar mahal untuk sebuah langkah kerja (algoritma) yang tepat karena tiga alasan utama."
+      title="Mengapa Algoritma Itu Penting?" 
+      subtitle="Perusahaan teknologi rela menginvestasikan sumber daya besar untuk merancang algoritma yang tepat, karena terdapat tiga alasan utama berikut."
     />
 
     <div className="grid grid-cols-1 gap-6">
       <Card className="flex flex-col md:flex-row gap-6 items-start md:items-center">
         <div className="w-14 h-14 bg-black rounded-2xl text-white flex items-center justify-center font-bold text-xl shrink-0">1</div>
         <div>
-          <h3 className="text-xl font-bold text-black mb-2">Efisiensi Tingkat Tinggi</h3>
+          <h3 className="text-xl font-bold text-black mb-2">Efisiensi</h3>
           <p className="text-[#71717A] leading-relaxed">
-            Mendapatkan hasil yang benar saja tidak cukup. Algoritma harus mampu memproses data dengan <b>sangat cepat (Waktu)</b> dan menggunakan spesifikasi <b>seminimal mungkin (Memori)</b>.
+            Menghasilkan jawaban yang benar saja tidak cukup. Sebuah algoritma yang baik harus dapat memproses data dengan <b>waktu seminimal mungkin</b> sekaligus menggunakan <b>sumber daya memori secara optimal</b>.
           </p>
         </div>
       </Card>
@@ -291,9 +291,9 @@ const AlasanSection = () => (
       <Card delay="delay-1" className="flex flex-col md:flex-row gap-6 items-start md:items-center">
         <div className="w-14 h-14 bg-black rounded-2xl text-white flex items-center justify-center font-bold text-xl shrink-0">2</div>
         <div>
-          <h3 className="text-xl font-bold text-black mb-2">Menyederhanakan yang Rumit (Abstraksi)</h3>
+          <h3 className="text-xl font-bold text-black mb-2">Penyederhanaan Masalah (Abstraksi)</h3>
           <p className="text-[#71717A] leading-relaxed">
-            Mengurai masalah yang terlihat mustahil atau sangat kompleks menjadi tahapan-tahapan kecil yang jelas, masuk akal, dan mudah diikuti oleh otak manusia.
+            Mengurai permasalahan yang tampak kompleks menjadi tahapan-tahapan kecil yang logis, terstruktur, dan lebih mudah dipahami serta diikuti.
           </p>
         </div>
       </Card>
@@ -301,9 +301,9 @@ const AlasanSection = () => (
       <Card delay="delay-2" className="flex flex-col md:flex-row gap-6 items-start md:items-center">
         <div className="w-14 h-14 bg-black rounded-2xl text-white flex items-center justify-center font-bold text-xl shrink-0">3</div>
         <div>
-          <h3 className="text-xl font-bold text-black mb-2">Dapat Dipakai Berulang (Reusability)</h3>
+          <h3 className="text-xl font-bold text-black mb-2">Dapat Digunakan Kembali (Reusability)</h3>
           <p className="text-[#71717A] leading-relaxed">
-            Algoritma adalah konsep pola pikir, bukan sekadar kode. Pola yang bagus bisa diubah ke berbagai bahasa pemrograman dan dipakai berkali-kali untuk proyek yang berbeda.
+            Algoritma merupakan konsep pemikiran, bukan sekadar kode dalam satu bahasa tertentu. Sebuah algoritma yang baik dapat diadaptasi ke berbagai bahasa pemrograman dan digunakan kembali untuk proyek lain.
           </p>
         </div>
       </Card>
@@ -314,8 +314,8 @@ const AlasanSection = () => (
 const ProgramBahasaSection = () => (
   <div className="space-y-12">
     <SectionTitle 
-      title="Sistem & Bahasa" 
-      subtitle="Komputer adalah mesin yang patuh, tapi kita butuh 'penerjemah' dan 'jembatan' agar perintah kita dapat dijalankan."
+      title="Sistem & Bahasa Pemrograman" 
+      subtitle="Komputer bekerja sesuai instruksi yang diberikan, namun dibutuhkan 'penerjemah' dan landasan sistem agar instruksi tersebut dapat dijalankan dengan baik."
     />
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in">
@@ -324,9 +324,9 @@ const ProgramBahasaSection = () => (
           <User size={24} />
         </div>
         <div>
-          <h3 className="font-bold text-lg text-black mb-2">Apa itu Programmer?</h3>
+          <h3 className="font-bold text-lg text-black mb-2">Programmer</h3>
           <p className="text-[#71717A] text-sm leading-relaxed">
-            Orang profesional yang bertanggung jawab merancang dan menyusun algoritma logika, lalu menerjemahkannya agar bisa dijalankan oleh mesin (komputer).
+            Profesional yang bertugas merancang dan menyusun logika algoritma, kemudian menerjemahkannya ke dalam bentuk yang dapat dieksekusi oleh komputer.
           </p>
         </div>
       </div>
@@ -336,9 +336,9 @@ const ProgramBahasaSection = () => (
           <Terminal size={24} />
         </div>
         <div>
-          <h3 className="font-bold text-lg text-black mb-2">Bahasa Pemrograman?</h3>
+          <h3 className="font-bold text-lg text-black mb-2">Bahasa Pemrograman</h3>
           <p className="text-[#71717A] text-sm leading-relaxed">
-            Sebuah "Bahasa Formal" (set instruksi standar) yang dipakai oleh Programmer untuk berkomunikasi dan memberi perintah langsung kepada komputer.
+            Kumpulan instruksi formal yang digunakan programmer sebagai media komunikasi untuk memberikan perintah kepada komputer.
           </p>
         </div>
       </div>
@@ -347,12 +347,12 @@ const ProgramBahasaSection = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 delay-2 animate-in">
       <div className="p-6 rounded-2xl border-l-4 border-l-black bg-black/5">
         <h3 className="font-bold text-black mb-2">1. Sistem Operasi (OS)</h3>
-        <p className="text-[#71717A] text-sm leading-relaxed mb-4">Program pondasi yang mengelola seluruh perangkat keras (layar, keyboard) dan memberi ruang agar program lain bisa berjalan.</p>
+        <p className="text-[#71717A] text-sm leading-relaxed mb-4">Perangkat lunak dasar yang mengelola seluruh perangkat keras (layar, keyboard, penyimpanan) dan menyediakan lingkungan bagi program lain untuk berjalan.</p>
         <span className="text-xs font-semibold px-3 py-1.5 bg-white rounded-full text-black shadow-sm">Windows, macOS, Linux</span>
       </div>
       <div className="p-6 rounded-2xl border-l-4 border-l-black bg-black/5">
         <h3 className="font-bold text-black mb-2">2. Program Aplikasi</h3>
-        <p className="text-[#71717A] text-sm leading-relaxed mb-4">Program buatan manusia yang berjalan menumpang di atas Sistem Operasi (OS) untuk melakukan pekerjaan spesifik.</p>
+        <p className="text-[#71717A] text-sm leading-relaxed mb-4">Perangkat lunak yang berjalan di atas sistem operasi untuk menjalankan fungsi atau tugas tertentu yang dibutuhkan pengguna.</p>
         <span className="text-xs font-semibold px-3 py-1.5 bg-white rounded-full text-black shadow-sm">Word, WhatsApp, Chrome</span>
       </div>
     </div>
@@ -364,21 +364,21 @@ const ProgramBahasaSection = () => (
           <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
           <div>
             <h4 className="font-bold text-black mb-1">Tingkat Rendah (Bahasa Mesin)</h4>
-            <p className="text-sm text-[#71717A]">Instruksi murni berupa deretan angka <code>0</code> dan <code>1</code>. Paling sulit dibaca manusia, tapi bisa langsung diproses mesin tanpa diterjemahkan.</p>
+            <p className="text-sm text-[#71717A]">Terdiri dari rangkaian instruksi biner berupa angka <code>0</code> dan <code>1</code>. Paling sulit dipahami manusia, namun dapat diproses langsung oleh mesin tanpa proses penerjemahan.</p>
           </div>
         </div>
         <div className="flex gap-5">
           <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm shrink-0">2</div>
           <div>
             <h4 className="font-bold text-black mb-1">Tingkat Menengah (Assembly)</h4>
-            <p className="text-sm text-[#71717A]">Mulai menggunakan kode singkatan logis seperti <code>MOV</code> (Move), <code>SUB</code> (Subtract). Masih cukup kaku namun lebih baik dari kode biner.</p>
+            <p className="text-sm text-[#71717A]">Menggunakan kode mnemonik seperti <code>MOV</code> (Move) dan <code>SUB</code> (Subtract). Lebih mudah dibaca dibandingkan kode biner, namun penulisannya masih relatif kaku.</p>
           </div>
         </div>
         <div className="flex gap-5">
           <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm shrink-0">3</div>
           <div>
             <h4 className="font-bold text-black mb-1">Tingkat Tinggi</h4>
-            <p className="text-sm text-[#71717A]">Paling modern dan dominan dipakai saat ini. Kosakatanya menyerupai bahasa manusia (Bahasa Inggris). Contoh: <code>Java, Python, PHP</code>.</p>
+            <p className="text-sm text-[#71717A]">Paling umum digunakan saat ini karena strukturnya mendekati bahasa manusia (Bahasa Inggris), sehingga lebih mudah dipelajari dan ditulis. Contoh: <code>Java, Python, PHP</code>.</p>
           </div>
         </div>
       </div>
@@ -387,8 +387,8 @@ const ProgramBahasaSection = () => (
     <div className="glass-card p-6 md:p-8 animate-in delay-3 bg-black text-white flex flex-col md:flex-row gap-6 items-center">
       <div className="p-4 bg-white/10 rounded-2xl shrink-0"><Code size={32}/></div>
       <p className="text-sm leading-relaxed text-center md:text-left">
-        <span className="font-bold text-white text-base block mb-1">Sejarah Singkat:</span> 
-        Tahukah Anda? Programmer pertama di dunia adalah seorang wanita bernama <b>Ada Lovelace</b> pada tahun 1843. Ia menyusun rencana komputasi yang dinobatkan sebagai cikal bakal program lunak modern.
+        <span className="font-bold text-white text-base block mb-1">Catatan Sejarah</span> 
+        Programmer pertama di dunia tercatat sebagai <b>Ada Lovelace</b> pada tahun 1843. Catatannya mengenai rancangan komputasi pada Mesin Analitikal Charles Babbage diakui sebagai cikal bakal program komputer modern.
       </p>
     </div>
   </div>
@@ -397,17 +397,17 @@ const ProgramBahasaSection = () => (
 const PenyelesaianSection = () => (
   <div className="space-y-12">
     <SectionTitle 
-      title="Pola Pikir Kreator" 
-      subtitle="Membangun sebuah aplikasi yang andal harus selalu melalui 3 tahapan baku ini secara berurutan."
+      title="Tahapan Pengembangan Program" 
+      subtitle="Untuk membangun sebuah program yang andal, pengembang umumnya mengikuti tiga tahapan utama berikut secara berurutan."
     />
 
     <div className="flex flex-col gap-4 relative">
       <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-black/10 z-0 hidden md:block"></div>
       
       {[
-        { step: 1, title: "Menganalisa & Merancang Algoritma", desc: "Mencari inti masalah, menentukan apa yang harus dimasukkan (Input) dan apa yang diharapkan keluar (Output). Kemudian, menulis urutan langkah penyelesaiannya." },
-        { step: 2, title: "Menuangkan ke dalam Kode (Coding)", desc: "Menerjemahkan urutan langkah yang sudah dirancang tadi ke dalam Bahasa Pemrograman pilihan (misal: Java, Python) agar dapat dieksekusi oleh mesin." },
-        { step: 3, title: "Menguji dan Menjalankan", desc: "Aplikasi yang sudah ditulis harus dicoba (dikompilasi) berkali-kali untuk menemukan kesalahan penulisan (bug), lalu diperbaiki sebelum dirilis ke publik." }
+        { step: 1, title: "Analisis & Perancangan Algoritma", desc: "Mengidentifikasi inti permasalahan, menentukan data yang dibutuhkan (input) serta hasil yang diharapkan (output), lalu menyusun urutan langkah penyelesaiannya." },
+        { step: 2, title: "Implementasi (Coding)", desc: "Menerjemahkan rancangan algoritma yang telah disusun ke dalam bahasa pemrograman yang dipilih (misalnya Java atau Python) agar dapat dieksekusi oleh komputer." },
+        { step: 3, title: "Pengujian & Eksekusi", desc: "Program yang telah ditulis dijalankan dan diuji secara berulang untuk mengidentifikasi kesalahan (bug), yang kemudian diperbaiki sebelum dirilis ke pengguna." }
       ].map((item, idx) => (
         <div key={idx} className="glass-card p-6 md:p-8 flex items-start gap-6 z-10 animate-in" style={{animationDelay: `${idx * 150}ms`}}>
           <div className="w-14 h-14 rounded-full bg-white border border-black/10 flex items-center justify-center font-bold text-black shadow-sm shrink-0">
@@ -427,16 +427,16 @@ const EkspresiSection = () => {
   const [activeTab, setActiveTab] = useState('bahasa');
   
   const tabs = [
-    { id: 'bahasa', label: 'Bahasa Biasa' },
+    { id: 'bahasa', label: 'Bahasa Natural' },
     { id: 'pseudo', label: 'Pseudocode' },
-    { id: 'java', label: 'Kode Asli (Java)' }
+    { id: 'java', label: 'Kode Program (Java)' }
   ];
 
   return (
     <div className="space-y-8">
       <SectionTitle 
-        title="Cara Penulisan" 
-        subtitle="Bagaimana cara memberi instruksi kepada komputer untuk mencari angka paling besar dari 3 angka? Berikut perbandingannya."
+        title="Notasi Penulisan Algoritma" 
+        subtitle="Sebuah algoritma dapat dituliskan dalam beberapa notasi. Berikut adalah perbandingan penulisan algoritma untuk menentukan nilai terbesar dari tiga buah angka."
       />
 
       <div className="glass-card overflow-hidden animate-in">
@@ -457,14 +457,14 @@ const EkspresiSection = () => {
         <div className="p-8 md:p-12 min-h-[350px] flex items-center justify-center bg-white">
           {activeTab === 'bahasa' && (
             <div className="space-y-4 text-black animate-in text-sm md:text-base w-full max-w-xl">
-              <p className="font-medium text-[#71717A]">Langkah-langkah:</p>
+              <p className="font-medium text-[#71717A]">Langkah-langkah penyelesaian:</p>
               <ul className="space-y-3">
                 <li>1. Mulai.</li>
-                <li>2. Siapkan 3 angka di pikiran kita.</li>
-                <li>3. Untuk awalan, anggap angka pertama adalah yang <b>terbesar</b>.</li>
-                <li>4. Bandingkan angka kedua dengan angka pertama. Jika lebih besar, maka angka kedua jadi yang terbesar baru.</li>
-                <li>5. Jika tidak, bandingkan angka ketiga. Jika ia lebih besar, maka catat sebagai terbesar.</li>
-                <li>6. Tampilkan angka terbesarnya. Selesai.</li>
+                <li>2. Siapkan tiga buah angka sebagai data masukan.</li>
+                <li>3. Tetapkan angka pertama sebagai nilai <b>terbesar</b> sementara.</li>
+                <li>4. Bandingkan angka kedua dengan nilai terbesar. Jika lebih besar, jadikan angka kedua sebagai nilai terbesar yang baru.</li>
+                <li>5. Bandingkan angka ketiga dengan nilai terbesar saat ini. Jika lebih besar, perbarui nilai terbesar tersebut.</li>
+                <li>6. Tampilkan nilai terbesar. Selesai.</li>
               </ul>
             </div>
           )}
@@ -512,17 +512,17 @@ const EkspresiSection = () => {
 const PedomanSection = () => (
   <div className="space-y-12">
     <SectionTitle 
-      title="Pedoman Standar" 
-      subtitle="Menurut ahli (Ellis Horowitz & Sartaj Sahni), algoritma yang valid dan tidak bermasalah harus memenuhi 5 kriteria mutlak ini."
+      title="Kriteria Algoritma yang Baik" 
+      subtitle="Menurut Ellis Horowitz dan Sartaj Sahni, sebuah algoritma yang valid harus memenuhi lima kriteria mutlak berikut ini."
     />
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {[
-        { title: "Input (Masukan)", desc: "Boleh tidak ada masukan awal, atau bisa memiliki banyak masukan sekaligus dari pengguna." },
-        { title: "Output (Keluaran)", desc: "Wajib menghasilkan minimal satu solusi, kesimpulan, atau hasil akhir yang dituju." },
-        { title: "Definiteness (Pasti)", desc: "Tiap instruksi harus lugas, tegas, jelas, dan tidak memiliki arti ganda (ambigu)." },
-        { title: "Finiteness (Ada Batas)", desc: "Bagaimanapun alur prosesnya, program wajib memiliki titik henti (selesai)." },
-        { title: "Effectiveness (Efektif)", desc: "Setiap operasinya harus sesederhana mungkin dan selesai dalam waktu yang masuk akal." }
+        { title: "Input (Masukan)", desc: "Sebuah algoritma dapat memiliki nol, satu, atau lebih data masukan dari pengguna sebelum proses dijalankan." },
+        { title: "Output (Keluaran)", desc: "Setiap algoritma wajib menghasilkan minimal satu keluaran berupa solusi atau hasil akhir yang sesuai dengan tujuannya." },
+        { title: "Definiteness (Ketegasan)", desc: "Setiap instruksi harus dirumuskan secara jelas, tegas, dan tidak menimbulkan lebih dari satu interpretasi (tidak ambigu)." },
+        { title: "Finiteness (Keterbatasan)", desc: "Apapun jalur proses yang ditempuh, algoritma harus berhenti setelah melakukan sejumlah langkah yang terbatas." },
+        { title: "Effectiveness (Efektivitas)", desc: "Setiap operasi dalam algoritma harus sederhana, dapat dikerjakan, dan diselesaikan dalam jangka waktu yang wajar." }
       ].map((item, idx) => (
         <Card key={idx} delay={`delay-${idx % 3}`} className={idx === 4 ? "md:col-span-2" : ""}>
           <h3 className="font-bold text-black mb-2">{item.title}</h3>
@@ -533,40 +533,40 @@ const PedomanSection = () => (
 
     <div className="mt-16 animate-in delay-2 border-t border-black/10 pt-10">
       <div className="mb-8">
-        <h3 className="text-2xl font-bold text-black mb-2">Mengapa Awam Perlu Tahu?</h3>
-        <p className="text-[#71717A]">Mempelajari alur ini bukan sekadar untuk menjadi programmer. Dampaknya sangat besar di kehidupan sehari-hari.</p>
+        <h3 className="text-2xl font-bold text-black mb-2">Manfaat Bagi Pembelajar Pemula</h3>
+        <p className="text-[#71717A]">Memahami konsep algoritma tidak hanya bermanfaat bagi calon programmer, tetapi juga memberikan dampak positif dalam kehidupan dan cara berpikir sehari-hari.</p>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
            <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
-             <h4 className="font-bold text-sm text-black mb-1">Berpikir Logis & Runtut</h4>
-             <p className="text-xs text-[#71717A] leading-relaxed">Melatih otak untuk selalu menyusun urutan langkah secara terstruktur, tidak terbolak-balik atau melompat-lompat saat menghadapi sebuah masalah.</p>
+             <h4 className="font-bold text-sm text-black mb-1">Berpikir Logis & Terstruktur</h4>
+             <p className="text-xs text-[#71717A] leading-relaxed">Melatih pola pikir untuk menyusun langkah penyelesaian masalah secara runtut dan sistematis, tanpa melompat-lompat antar tahapan.</p>
            </div>
         </div>
         
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
            <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
-             <h4 className="font-bold text-sm text-black mb-1">Ketelitian Tingkat Tinggi</h4>
-             <p className="text-xs text-[#71717A] leading-relaxed">Membiasakan diri memeriksa ulang dan menganalisis secara cermat ketika sebuah tugas (atau kode) ternyata tidak berjalan sesuai harapan.</p>
+             <h4 className="font-bold text-sm text-black mb-1">Ketelitian dan Analisis</h4>
+             <p className="text-xs text-[#71717A] leading-relaxed">Membiasakan diri untuk memeriksa ulang dan menganalisis secara cermat ketika hasil yang diperoleh tidak sesuai dengan harapan.</p>
            </div>
         </div>
 
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
            <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
-             <h4 className="font-bold text-sm text-black mb-1">Insting Problem Solving</h4>
-             <p className="text-xs text-[#71717A] leading-relaxed">Meningkatkan kemampuan memprediksi hambatan yang mungkin muncul dan secara otomatis memikirkan solusi cadangan secara sistematis.</p>
+             <h4 className="font-bold text-sm text-black mb-1">Kemampuan Pemecahan Masalah</h4>
+             <p className="text-xs text-[#71717A] leading-relaxed">Meningkatkan kemampuan memprediksi kendala yang mungkin terjadi serta merancang solusi alternatif secara sistematis.</p>
            </div>
         </div>
 
         <div className="p-6 rounded-2xl bg-black text-white border border-black/10 flex items-start gap-4 shadow-sm">
            <div className="p-2 bg-white/20 rounded-lg text-white shrink-0"><CheckCircle size={22}/></div>
            <div>
-             <h4 className="font-bold text-sm text-white mb-1">Keteraturan Bekerja</h4>
-             <p className="text-xs text-[#D4D4D8] leading-relaxed">Memahami bahwa semua aplikasi raksasa lahir dari instruksi kecil yang disiplin. Ini melatih kita bekerja secara bertahap namun pasti.</p>
+             <h4 className="font-bold text-sm text-white mb-1">Keteraturan dalam Bekerja</h4>
+             <p className="text-xs text-[#D4D4D8] leading-relaxed">Memahami bahwa sistem yang kompleks dibangun dari instruksi-instruksi kecil yang disusun secara disiplin dan bertahap.</p>
            </div>
         </div>
       </div>
@@ -580,14 +580,14 @@ const StrukturSection = () => {
   return (
     <div className="space-y-12">
       <SectionTitle 
-        title="3 Struktur Dasar" 
-        subtitle="Sistem perbankan, aplikasi chat, hingga game 3D paling kompleks, semuanya dibangun hanya dari kombinasi tiga blok logika dasar ini."
+        title="Tiga Struktur Dasar Algoritma" 
+        subtitle="Mulai dari sistem perbankan, aplikasi perpesanan, hingga game tiga dimensi yang kompleks—semuanya dibangun dari kombinasi tiga struktur logika dasar berikut."
       />
 
       <div className="flex flex-col md:flex-row gap-3 justify-center mb-10 animate-in">
         {[
-          {id: 'sequential', label: '1. Skuensial (Urut)'},
-          {id: 'selection', label: '2. Seleksi (Pilihan)'},
+          {id: 'sequential', label: '1. Sekuensial (Urutan)'},
+          {id: 'selection', label: '2. Seleksi (Percabangan)'},
           {id: 'looping', label: '3. Perulangan (Loop)'}
         ].map(t => (
           <button
@@ -609,7 +609,7 @@ const StrukturSection = () => {
             <div className="w-full max-w-[200px] flex flex-col items-center animate-in space-y-2">
               <div className="px-6 py-2 rounded-full border border-black/20 text-xs font-bold bg-black/5">Mulai</div>
               <ArrowDown size={16} className="text-[#A1A1AA]"/>
-              <div className="w-full p-3 rounded-xl border border-black/20 text-sm text-center font-medium">Buka Botol</div>
+              <div className="w-full p-3 rounded-xl border border-black/20 text-sm text-center font-medium">Buka Kemasan</div>
               <ArrowDown size={16} className="text-[#A1A1AA]"/>
               <div className="w-full p-3 rounded-xl border border-black/20 text-sm text-center font-medium">Tuang Air</div>
               <ArrowDown size={16} className="text-[#A1A1AA]"/>
@@ -625,7 +625,7 @@ const StrukturSection = () => {
               <ArrowDown size={16} className="text-[#A1A1AA] mb-2"/>
               
               <div className="w-full p-4 rounded-xl border-2 border-black bg-black text-white text-sm text-center font-bold relative mb-4">
-                Apakah Hujan?
+                Apakah Hari Ini Hujan?
               </div>
               
               <div className="flex w-full justify-between items-start pt-2 border-t-2 border-[#E4E4E7] relative mt-2">
@@ -634,11 +634,11 @@ const StrukturSection = () => {
                 
                 <div className="w-[45%] flex flex-col items-center pt-4">
                   <span className="text-xs font-bold mb-2">YA</span>
-                  <div className="w-full p-3 rounded-xl border border-black/20 text-xs text-center">Bawa Payung</div>
+                  <div className="w-full p-3 rounded-xl border border-black/20 text-xs text-center">Membawa Payung</div>
                 </div>
                 <div className="w-[45%] flex flex-col items-center pt-4">
                   <span className="text-xs font-bold mb-2 text-[#A1A1AA]">TIDAK</span>
-                  <div className="w-full p-3 rounded-xl border border-black/20 text-xs text-center text-[#71717A]">Bawa Topi</div>
+                  <div className="w-full p-3 rounded-xl border border-black/20 text-xs text-center text-[#71717A]">Memakai Topi</div>
                 </div>
               </div>
             </div>
@@ -653,7 +653,7 @@ const StrukturSection = () => {
                   Pukul Paku
                 </div>
                 
-                <div className="text-xs font-bold mb-1">Sudah Tertancap?</div>
+                <div className="text-xs font-bold mb-1">Apakah Sudah Tertancap?</div>
                 <div className="flex w-full justify-between mt-2">
                    <div className="flex flex-col items-center">
                       <span className="text-[10px] text-[#A1A1AA]">Belum</span>
@@ -675,36 +675,36 @@ const StrukturSection = () => {
         <div className="lg:col-span-3 glass-card p-8 flex flex-col justify-center">
           {activeTab === 'sequential' && (
             <div className="animate-in">
-              <h3 className="text-2xl font-bold text-black mb-4">Garis Lurus Tanpa Henti</h3>
+              <h3 className="text-2xl font-bold text-black mb-4">Eksekusi Berurutan</h3>
               <p className="text-[#71717A] leading-relaxed mb-6">
-                Tipe kode yang paling jujur. Mesin membaca instruksi dari baris paling atas, lalu turun satu per satu hingga selesai. Tidak ada baris yang dilewati. Cocok untuk operasi matematika sederhana.
+                Struktur paling dasar dalam algoritma. Komputer membaca dan menjalankan instruksi dari baris pertama hingga baris terakhir secara berurutan, tanpa ada langkah yang dilewati. Struktur ini cocok untuk proses-proses sederhana yang tidak memerlukan pengambilan keputusan.
               </p>
               <div className="p-4 bg-black/5 rounded-xl border border-black/10 text-sm">
-                <strong className="text-black">Cara Awam Memahami:</strong> Seperti membaca resep masakan mi instan. Semua langkah harus urut dari masak air sampai menuang bumbu.
+                <strong className="text-black">Analogi Sederhana:</strong> Mengikuti petunjuk penyajian mi instan—seluruh langkah, dari merebus air hingga menuangkan bumbu, harus dilakukan secara berurutan.
               </div>
             </div>
           )}
           
           {activeTab === 'selection' && (
             <div className="animate-in">
-              <h3 className="text-2xl font-bold text-black mb-4">Pembuat Keputusan (Percabangan)</h3>
+              <h3 className="text-2xl font-bold text-black mb-4">Percabangan (Pengambilan Keputusan)</h3>
               <p className="text-[#71717A] leading-relaxed mb-6">
-                Ini yang membuat komputer seolah 'pintar'. Ia diajari untuk memeriksa suatu <b>Syarat</b>. Jika syarat terpenuhi (Benar), mesin akan melakukan A. Jika tidak (Salah), ia melakukan B.
+                Struktur ini memungkinkan komputer mengevaluasi sebuah <b>kondisi</b> tertentu. Apabila kondisi tersebut terpenuhi (benar), sistem akan menjalankan instruksi A; jika tidak (salah), sistem akan menjalankan instruksi B.
               </p>
               <div className="p-4 bg-black/5 rounded-xl border border-black/10 text-sm">
-                <strong className="text-black">Cara Awam Memahami:</strong> Seperti bertanya pada diri sendiri sebelum keluar rumah. "Jika Hujan = Bawa Payung. Jika Tidak = Pakai Topi."
+                <strong className="text-black">Analogi Sederhana:</strong> Mempertimbangkan kondisi sebelum berangkat dari rumah—"Jika hujan, maka membawa payung. Jika tidak, maka memakai topi."
               </div>
             </div>
           )}
 
           {activeTab === 'looping' && (
             <div className="animate-in">
-              <h3 className="text-2xl font-bold text-black mb-4">Pekerja Keras Tanpa Lelah</h3>
+              <h3 className="text-2xl font-bold text-black mb-4">Perulangan (Repetisi)</h3>
               <p className="text-[#71717A] leading-relaxed mb-6">
-                Komputer menyukai hal yang diulang. Struktur ini menyuruh mesin mengerjakan instruksi yang sama ratusan, bahkan jutaan kali dengan sangat cepat hingga suatu batasan tertentu tercapai.
+                Struktur ini memerintahkan komputer untuk menjalankan instruksi yang sama secara berulang—dapat ratusan hingga jutaan kali—hingga suatu kondisi atau batas tertentu terpenuhi.
               </p>
               <div className="p-4 bg-black/5 rounded-xl border border-black/10 text-sm">
-                <strong className="text-black">Cara Awam Memahami:</strong> Menyuruh anak menulis kalimat "Saya tidak nakal" 100 kali. Di program, Anda hanya butuh 3 baris kode untuk melakukannya.
+                <strong className="text-black">Analogi Sederhana:</strong> Menulis kalimat yang sama sebanyak 100 kali sebagai bentuk latihan. Dalam sebuah program, tugas tersebut hanya membutuhkan beberapa baris kode.
               </div>
             </div>
           )}
@@ -724,15 +724,15 @@ const GlosariumSection = () => {
   return (
     <div className="space-y-12">
       <SectionTitle 
-        title="Kamus Istilah" 
-        subtitle="Merasa asing dengan istilah teknis? Temukan penjelasan sederhananya di sini."
+        title="Glosarium" 
+        subtitle="Kumpulan istilah teknis yang sering muncul dalam pembahasan algoritma dan pemrograman, beserta penjelasannya secara sederhana."
       />
       
       <div className="relative mb-10 animate-in">
         <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A1A1AA]" size={20} />
         <input 
           type="text" 
-          placeholder="Cari kata (contoh: CPU, Pseudocode)..." 
+          placeholder="Cari istilah (contoh: CPU, Pseudocode)..." 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full bg-white border-2 border-black/10 rounded-2xl py-4 pl-14 pr-6 text-black placeholder-[#A1A1AA] focus:outline-none focus:border-black transition-all shadow-sm"
@@ -748,7 +748,7 @@ const GlosariumSection = () => {
         )) : (
           <div className="text-center text-[#A1A1AA] py-16 glass-card">
             <Search className="mx-auto mb-4 opacity-50" size={40}/>
-            Tidak ada kata yang cocok dengan pencarian Anda.
+            Istilah yang Anda cari tidak ditemukan.
           </div>
         )}
       </div>
@@ -778,9 +778,9 @@ const KuisSection = () => {
   };
 
   const getGrade = (score: number) => {
-    if(score >= 90) return { text: "Sempurna! Pemahaman Anda Sangat Baik.", border: "border-black bg-black text-white" };
-    if(score >= 80) return { text: "Cukup Memuaskan. Pertahankan!", border: "border-black/50 bg-black/5 text-black" };
-    return { text: "Mari Belajar Lebih Giat Lagi.", border: "border-[#E4E4E7] bg-white text-[#71717A]" };
+    if(score >= 90) return { text: "Sangat Baik. Pemahaman Anda sudah sangat memadai.", border: "border-black bg-black text-white" };
+    if(score >= 80) return { text: "Baik. Pertahankan capaian ini.", border: "border-black/50 bg-black/5 text-black" };
+    return { text: "Disarankan untuk meninjau kembali materi terkait.", border: "border-[#E4E4E7] bg-white text-[#71717A]" };
   };
 
   if(!activeQuiz) {
@@ -791,7 +791,7 @@ const KuisSection = () => {
         </div>
         <h2 className="text-4xl font-bold mb-4 text-black">Uji Pemahaman</h2>
         <p className="text-[#71717A] mb-12 text-lg leading-relaxed">
-          Pilih salah satu tes formatif santai di bawah ini. Anda dapat melatih kembali seberapa jauh pemahaman Anda setelah membaca panduan ini.
+          Pilih salah satu tes formatif di bawah ini untuk mengukur sejauh mana pemahaman Anda terhadap materi yang telah dipelajari.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -800,14 +800,14 @@ const KuisSection = () => {
               Tes Formatif 1
               <Play size={18} className="opacity-0 group-hover:opacity-100 transition-opacity"/>
             </h3>
-            <p className="text-sm text-[#71717A]">Materi Konsep Dasar, Manfaat, & Definisi.</p>
+            <p className="text-sm text-[#71717A]">Konsep dasar, manfaat, dan definisi algoritma.</p>
           </button>
           <button onClick={() => setActiveQuiz('tf2')} className="glass-card p-8 group border-2 hover:border-black transition-colors">
             <h3 className="text-xl font-bold text-black mb-2 flex justify-between items-center">
               Tes Formatif 2
               <Play size={18} className="opacity-0 group-hover:opacity-100 transition-opacity"/>
             </h3>
-            <p className="text-sm text-[#71717A]">Materi Tiga Struktur Logika Algoritma.</p>
+            <p className="text-sm text-[#71717A]">Tiga struktur dasar logika algoritma.</p>
           </button>
         </div>
       </div>
@@ -827,14 +827,14 @@ const KuisSection = () => {
         </div>
         
         <p className="text-[#71717A] mb-12 text-lg">
-          Menjawab benar <b>{score/20}</b> dari total {quizData.length} pertanyaan.
+          Anda menjawab benar <b>{score/20}</b> dari total {quizData.length} pertanyaan.
         </p>
 
         <button 
           onClick={() => { setActiveQuiz(null); setAnswers({}); setIsSubmitted(false); setCurrentIndex(0); }}
           className="px-8 py-4 rounded-full bg-black text-white font-bold hover:scale-105 transition-transform"
         >
-          Pilih Kuis Lainnya
+          Pilih Tes Lainnya
         </button>
       </div>
     );
@@ -952,7 +952,7 @@ export default function App() {
         <div className="px-6 py-8 md:p-0 flex items-center justify-between mb-8">
           <div>
             <h2 className="font-bold text-2xl tracking-tight hidden md:block">Edukasi.IT</h2>
-            <p className="text-sm text-[#71717A] mt-1 font-medium">Dasar Algoritma</p>
+            <p className="text-sm text-[#71717A] mt-1 font-medium">Dasar-Dasar Algoritma</p>
           </div>
           <button className="md:hidden text-[#71717A] bg-black/5 rounded-full p-2" onClick={() => setIsMobileMenuOpen(false)}>
             <X size={20} />
