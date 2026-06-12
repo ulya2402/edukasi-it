@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Book, BrainCircuit, Code2, Layers, Map, FileText, 
-  CheckCircle2, Menu, X, ChevronRight, Play, ArrowRight,
+  CheckCircle2, Menu, X, Play, ArrowRight,
   ArrowDown, CornerDownLeft, SplitSquareHorizontal, Search,
   TerminalSquare, UserCog
 } from 'lucide-react';
