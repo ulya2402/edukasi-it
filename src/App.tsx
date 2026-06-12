@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Book, BrainCircuit, Code2, Layers, Map, FileText, 
-  CheckCircle2, Menu, X, Play, ArrowRight,
-  ArrowDown, CornerDownLeft, SplitSquareHorizontal, Search,
-  TerminalSquare, UserCog
+  Book, Brain, Code, Layers, MapPin, FileText, 
+  CheckCircle, Menu, X, Play, ArrowRight,
+  ArrowDown, CornerDownLeft, List, Search,
+  Terminal, User
 } from 'lucide-react';
 
 // --- STYLES & TAILWIND INJECTION ---
-// Fungsi ini memastikan Tailwind CSS & Animasi berjalan otomatis tanpa perlu konfigurasi manual di VS Code
 const injectStyles = () => {
-  // 1. Inject Tailwind CSS CDN
   if (!document.getElementById('tailwind-cdn')) {
     const script = document.createElement('script');
     script.id = 'tailwind-cdn';
@@ -17,7 +15,6 @@ const injectStyles = () => {
     document.head.appendChild(script);
   }
 
-  // 2. Inject Custom Styles & Animations
   if (!document.getElementById('app-custom-styles')) {
     const style = document.createElement('style');
     style.id = 'app-custom-styles';
@@ -41,7 +38,6 @@ const injectStyles = () => {
         -webkit-font-smoothing: antialiased;
       }
 
-      /* Ambient Background Effect */
       .bg-ambient {
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
@@ -67,7 +63,6 @@ const injectStyles = () => {
         filter: blur(100px);
       }
 
-      /* Apple-like Glassmorphism */
       .glass-card {
         background: var(--glass-bg);
         backdrop-filter: blur(20px) saturate(160%);
@@ -83,7 +78,6 @@ const injectStyles = () => {
         background: rgba(255, 255, 255, 0.9);
       }
 
-      /* Smooth High-Performance Animations */
       .animate-in {
         animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         will-change: transform, opacity;
@@ -99,13 +93,11 @@ const injectStyles = () => {
       .delay-2 { animation-delay: 200ms; }
       .delay-3 { animation-delay: 300ms; }
 
-      /* Custom Scrollbar */
       ::-webkit-scrollbar { width: 6px; }
       ::-webkit-scrollbar-track { background: transparent; }
       ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 10px; }
       ::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
 
-      /* Clean Tabs */
       .tab-container {
         background: rgba(228, 228, 231, 0.4);
         border-radius: 12px;
@@ -119,13 +111,13 @@ const injectStyles = () => {
 // --- DATA & CONTENT ---
 const SECTIONS = [
   { id: 'home', title: 'Pendahuluan', icon: Book },
-  { id: 'pengertian', title: 'Konsep Algoritma', icon: BrainCircuit },
-  { id: 'alasan', title: 'Alasan Logis', icon: Map },
-  { id: 'program', title: 'Sistem & Bahasa', icon: Code2 },
+  { id: 'pengertian', title: 'Konsep Algoritma', icon: Brain },
+  { id: 'alasan', title: 'Alasan Logis', icon: MapPin },
+  { id: 'program', title: 'Sistem & Bahasa', icon: Code },
   { id: 'penyelesaian', title: 'Pola Pikir', icon: Layers },
   { id: 'ekspresi', title: 'Cara Penulisan', icon: FileText },
-  { id: 'pedoman', title: 'Pedoman Standar', icon: CheckCircle2 },
-  { id: 'struktur', title: 'Struktur Dasar', icon: SplitSquareHorizontal },
+  { id: 'pedoman', title: 'Pedoman Standar', icon: CheckCircle },
+  { id: 'struktur', title: 'Struktur Dasar', icon: List },
   { id: 'glosarium', title: 'Kamus Istilah', icon: Search },
 ];
 
@@ -137,7 +129,9 @@ const GLOSSARY = [
   { term: "Flowchart", desc: "Bagan alir. Gambaran visual menggunakan bentuk-bentuk geometris (kotak, oval, belah ketupat) untuk menjelaskan urutan langkah sebuah sistem." }
 ];
 
-const QUIZ_DATA = {
+type QuizQuestion = { q: string, options: string[], a: number };
+
+const QUIZ_DATA: Record<string, QuizQuestion[]> = {
   tf1: [
     { q: "Suatu upaya dengan urutan operasi yang disusun secara logis dan sistematis untuk menyelesaikan masalah adalah...", options: ["Logika pemrograman", "Algoritma", "Program komputer", "Logika informatika"], a: 1 },
     { q: "Algoritma adalah suatu metode khusus untuk menyelesaikan suatu masalah, ini adalah definisi menurut...", options: ["Abu Ja'far Al-Khawarizmi", "Donald E. Knuth", "David Bolton", "Andrey Markov"], a: 0 },
@@ -193,7 +187,7 @@ const HomeSection = ({ onNavigate }: { onNavigate: (id: string) => void }) => (
       >
         <div className="flex items-center gap-5">
           <div className="bg-black/5 p-3 rounded-2xl text-black">
-            <BrainCircuit size={24} />
+            <Brain size={24} />
           </div>
           <div>
             <h3 className="font-semibold text-lg text-black">Mulai Membaca</h3>
@@ -324,11 +318,10 @@ const ProgramBahasaSection = () => (
       subtitle="Komputer adalah mesin yang patuh, tapi kita butuh 'penerjemah' dan 'jembatan' agar perintah kita dapat dijalankan."
     />
     
-    {/* Pengertian Programmer dan Bahasa */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in">
       <div className="p-8 rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col gap-4">
         <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center text-black">
-          <UserCog size={24} />
+          <User size={24} />
         </div>
         <div>
           <h3 className="font-bold text-lg text-black mb-2">Apa itu Programmer?</h3>
@@ -340,7 +333,7 @@ const ProgramBahasaSection = () => (
 
       <div className="p-8 rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col gap-4 delay-1 animate-in">
         <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center text-black">
-          <TerminalSquare size={24} />
+          <Terminal size={24} />
         </div>
         <div>
           <h3 className="font-bold text-lg text-black mb-2">Bahasa Pemrograman?</h3>
@@ -351,7 +344,6 @@ const ProgramBahasaSection = () => (
       </div>
     </div>
 
-    {/* Kategori Program */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 delay-2 animate-in">
       <div className="p-6 rounded-2xl border-l-4 border-l-black bg-black/5">
         <h3 className="font-bold text-black mb-2">1. Sistem Operasi (OS)</h3>
@@ -365,7 +357,6 @@ const ProgramBahasaSection = () => (
       </div>
     </div>
 
-    {/* Evolusi Bahasa */}
     <Card delay="delay-3">
       <h3 className="text-lg font-bold text-black mb-8 border-b border-black/10 pb-4">Tingkatan Bahasa Pemrograman</h3>
       <div className="space-y-6">
@@ -394,7 +385,7 @@ const ProgramBahasaSection = () => (
     </Card>
 
     <div className="glass-card p-6 md:p-8 animate-in delay-3 bg-black text-white flex flex-col md:flex-row gap-6 items-center">
-      <div className="p-4 bg-white/10 rounded-2xl shrink-0"><Code2 size={32}/></div>
+      <div className="p-4 bg-white/10 rounded-2xl shrink-0"><Code size={32}/></div>
       <p className="text-sm leading-relaxed text-center md:text-left">
         <span className="font-bold text-white text-base block mb-1">Sejarah Singkat:</span> 
         Tahukah Anda? Programmer pertama di dunia adalah seorang wanita bernama <b>Ada Lovelace</b> pada tahun 1843. Ia menyusun rencana komputasi yang dinobatkan sebagai cikal bakal program lunak modern.
@@ -411,7 +402,6 @@ const PenyelesaianSection = () => (
     />
 
     <div className="flex flex-col gap-4 relative">
-      {/* Visual Line */}
       <div className="absolute left-7 top-10 bottom-10 w-0.5 bg-black/10 z-0 hidden md:block"></div>
       
       {[
@@ -541,7 +531,6 @@ const PedomanSection = () => (
       ))}
     </div>
 
-    {/* Bagian yang Diperbaiki (Bug List) - Diubah menjadi Grid Card yang Responsif */}
     <div className="mt-16 animate-in delay-2 border-t border-black/10 pt-10">
       <div className="mb-8">
         <h3 className="text-2xl font-bold text-black mb-2">Mengapa Awam Perlu Tahu?</h3>
@@ -550,7 +539,7 @@ const PedomanSection = () => (
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
-           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle2 size={22}/></div>
+           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
              <h4 className="font-bold text-sm text-black mb-1">Berpikir Logis & Runtut</h4>
              <p className="text-xs text-[#71717A] leading-relaxed">Melatih otak untuk selalu menyusun urutan langkah secara terstruktur, tidak terbolak-balik atau melompat-lompat saat menghadapi sebuah masalah.</p>
@@ -558,7 +547,7 @@ const PedomanSection = () => (
         </div>
         
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
-           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle2 size={22}/></div>
+           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
              <h4 className="font-bold text-sm text-black mb-1">Ketelitian Tingkat Tinggi</h4>
              <p className="text-xs text-[#71717A] leading-relaxed">Membiasakan diri memeriksa ulang dan menganalisis secara cermat ketika sebuah tugas (atau kode) ternyata tidak berjalan sesuai harapan.</p>
@@ -566,7 +555,7 @@ const PedomanSection = () => (
         </div>
 
         <div className="p-6 rounded-2xl bg-white border border-black/10 flex items-start gap-4 hover:border-black transition-colors shadow-sm">
-           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle2 size={22}/></div>
+           <div className="p-2 bg-black/5 rounded-lg text-black shrink-0"><CheckCircle size={22}/></div>
            <div>
              <h4 className="font-bold text-sm text-black mb-1">Insting Problem Solving</h4>
              <p className="text-xs text-[#71717A] leading-relaxed">Meningkatkan kemampuan memprediksi hambatan yang mungkin muncul dan secara otomatis memikirkan solusi cadangan secara sistematis.</p>
@@ -574,7 +563,7 @@ const PedomanSection = () => (
         </div>
 
         <div className="p-6 rounded-2xl bg-black text-white border border-black/10 flex items-start gap-4 shadow-sm">
-           <div className="p-2 bg-white/20 rounded-lg text-white shrink-0"><CheckCircle2 size={22}/></div>
+           <div className="p-2 bg-white/20 rounded-lg text-white shrink-0"><CheckCircle size={22}/></div>
            <div>
              <h4 className="font-bold text-sm text-white mb-1">Keteraturan Bekerja</h4>
              <p className="text-xs text-[#D4D4D8] leading-relaxed">Memahami bahwa semua aplikasi raksasa lahir dari instruksi kecil yang disiplin. Ini melatih kita bekerja secara bertahap namun pasti.</p>
@@ -613,7 +602,7 @@ const StrukturSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 animate-in delay-1">
         
-        {/* Left: UI Timeline Flow Diagram (Anti-Bug Layout) */}
+        {/* Left: UI Timeline Flow Diagram */}
         <div className="lg:col-span-2 glass-card p-8 flex flex-col items-center justify-center min-h-[400px] bg-white">
           
           {activeTab === 'sequential' && (
@@ -635,14 +624,11 @@ const StrukturSection = () => {
               <div className="px-6 py-2 rounded-full border border-black/20 text-xs font-bold bg-black/5 mb-2">Mulai</div>
               <ArrowDown size={16} className="text-[#A1A1AA] mb-2"/>
               
-              {/* Decision Box */}
               <div className="w-full p-4 rounded-xl border-2 border-black bg-black text-white text-sm text-center font-bold relative mb-4">
                 Apakah Hujan?
               </div>
               
-              {/* Branching UI (Safe from mobile bugs) */}
               <div className="flex w-full justify-between items-start pt-2 border-t-2 border-[#E4E4E7] relative mt-2">
-                {/* Visual connectors */}
                 <div className="absolute top-0 left-[20%] w-0.5 h-4 bg-[#E4E4E7]"></div>
                 <div className="absolute top-0 right-[20%] w-0.5 h-4 bg-[#E4E4E7]"></div>
                 
@@ -685,7 +671,7 @@ const StrukturSection = () => {
           )}
         </div>
 
-        {/* Right: Explanation text */}
+        {/* Right: Explanation */}
         <div className="lg:col-span-3 glass-card p-8 flex flex-col justify-center">
           {activeTab === 'sequential' && (
             <div className="animate-in">
@@ -801,7 +787,7 @@ const KuisSection = () => {
     return (
       <div className="text-center max-w-2xl mx-auto py-16 animate-in">
         <div className="w-20 h-20 bg-black text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
-          <CheckCircle2 size={40} />
+          <CheckCircle size={40} />
         </div>
         <h2 className="text-4xl font-bold mb-4 text-black">Uji Pemahaman</h2>
         <p className="text-[#71717A] mb-12 text-lg leading-relaxed">
@@ -855,7 +841,7 @@ const KuisSection = () => {
   }
 
   const q = quizData[currentIndex];
-  if (!q) return null; // Pelindung Error TypeScript Ketat (Strict Mode)
+  if (!q) return null;
 
   return (
     <div className="max-w-2xl mx-auto animate-in">
@@ -920,7 +906,6 @@ const KuisSection = () => {
   );
 };
 
-
 // --- MAIN APP COMPONENT ---
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -954,10 +939,8 @@ export default function App() {
 
   return (
     <div className="flex h-screen bg-[#FAFAFA] text-[#09090B] overflow-hidden selection:bg-black/20">
-      {/* Background Decor */}
       <div className="bg-ambient"></div>
 
-      {/* Mobile Top Navbar */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white/80 backdrop-blur-xl border-b border-black/10 flex items-center justify-between px-6 z-50">
         <div className="font-bold text-xl tracking-tight">Edukasi.IT</div>
         <button onClick={() => setIsMobileMenuOpen(true)} className="text-black p-1">
@@ -965,7 +948,6 @@ export default function App() {
         </button>
       </div>
 
-      {/* Sidebar Navigation */}
       <aside className={`fixed inset-y-0 left-0 z-50 w-72 bg-white/95 backdrop-blur-xl transform transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col border-r border-black/10 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:bg-transparent md:border-r-0 md:w-80 md:px-6 md:py-8`}>
         <div className="px-6 py-8 md:p-0 flex items-center justify-between mb-8">
           <div>
@@ -980,7 +962,7 @@ export default function App() {
         <nav className="flex-1 overflow-y-auto px-4 md:px-0 space-y-1.5 pb-20">
           {SECTIONS.map((sec) => {
             const isActive = activeSection === sec.id;
-            const Icon = sec.icon; // Huruf besar (Capitalize) penting untuk JSX strict mode
+            const Icon = sec.icon; 
             return (
               <button
                 key={sec.id}
@@ -995,14 +977,12 @@ export default function App() {
         </nav>
       </aside>
 
-      {/* Main Content Area */}
       <main className="flex-1 h-full overflow-y-auto relative z-10 pt-20 md:pt-0">
         <div className="max-w-4xl mx-auto px-6 py-12 md:py-24 relative z-10 pb-32">
           {renderSection()}
         </div>
       </main>
 
-      {/* Mobile Background Overlay */}
       {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300" 
