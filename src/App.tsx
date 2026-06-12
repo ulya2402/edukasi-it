@@ -324,7 +324,7 @@ const ProgramBahasaSection = () => (
       subtitle="Komputer adalah mesin yang patuh, tapi kita butuh 'penerjemah' dan 'jembatan' agar perintah kita dapat dijalankan."
     />
     
-    {/* Pengertian Programmer dan Bahasa - Mengisi Kekosongan */}
+    {/* Pengertian Programmer dan Bahasa */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in">
       <div className="p-8 rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col gap-4">
         <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center text-black">
@@ -855,6 +855,7 @@ const KuisSection = () => {
   }
 
   const q = quizData[currentIndex];
+  if (!q) return null; // Pelindung Error TypeScript Ketat (Strict Mode)
 
   return (
     <div className="max-w-2xl mx-auto animate-in">
@@ -979,13 +980,14 @@ export default function App() {
         <nav className="flex-1 overflow-y-auto px-4 md:px-0 space-y-1.5 pb-20">
           {SECTIONS.map((sec) => {
             const isActive = activeSection === sec.id;
+            const Icon = sec.icon; // Huruf besar (Capitalize) penting untuk JSX strict mode
             return (
               <button
                 key={sec.id}
                 onClick={() => navigateTo(sec.id)}
                 className={`w-full flex items-center gap-4 px-5 py-3.5 rounded-2xl text-[14px] font-semibold transition-all duration-200 ${isActive ? 'bg-black text-white shadow-md' : 'text-[#71717A] hover:bg-black/5 hover:text-black'}`}
               >
-                <sec.icon size={20} className={isActive ? 'text-white' : 'text-[#A1A1AA]'} />
+                <Icon size={20} className={isActive ? 'text-white' : 'text-[#A1A1AA]'} />
                 {sec.title}
               </button>
             )
